@@ -1,19 +1,22 @@
-import express from 'express';
 import { Router } from 'express';
-import User from "../model/User.js";
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
-import { registerUser } from '../controller/user.controller.js';
+import { deleteUser, getUser, loginUser, logoutUser, refetchUser, registerUser, updatePassword } from '../controller/user.controller.js';
+import verifyJwt from '../middlewares/auth.middleware.js';
 
 
 const userRouter = Router();
 
 //register
 userRouter.route('/register').post(registerUser);
-
-
-
 //login
-
-
+userRouter.route('/login').post(loginUser);
 //logout
+userRouter.route('/logout').get(logoutUser);
+//refetch
+userRouter.route('/refetch').get(verifyJwt,refetchUser); 
+//update password
+userRouter.route('/:id').put(verifyJwt,updatePassword);
+//delete 
+userRouter.route('/:id').delete(verifyJwt,deleteUser);
+//getuser
+userRouter.route('/:id').get(getUser);
+export default userRouter;
