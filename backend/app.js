@@ -4,7 +4,7 @@ import cors from "cors";
 const app = express();
 
 const corsOptions = {
-    origin: process.env.CORS_ORIGIN,
+    origin: "https://blog-app-yvbi.vercel.app/",
     credentials: true,
     maxAge: 1800,
     allowedHeaders: ['content-type'],
