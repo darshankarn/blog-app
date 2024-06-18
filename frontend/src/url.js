@@ -1,1 +1,1 @@
-export const URL = "https://blog-app-flax-tau.vercel.app"
+export const URL = "https://blog-60pv1841s-darshankarns-projects.vercel.app"
