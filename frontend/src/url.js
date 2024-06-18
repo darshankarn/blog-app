@@ -1,1 +1,1 @@
-export const URL = "https://blog-app-six-alpha.vercel.app"
+export const URL = `${window.location.origin}`
