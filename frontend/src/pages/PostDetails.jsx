@@ -98,8 +98,8 @@ function PostDetails() {
                                 <p>{new Date(postdetails.updatedAt).toString().slice(16,21)}</p>
                             </div>
                         </div>
-                        <img src={postdetails.photo} alt="" className=" w-full mx-auto mt-8" />
-                        <p className="mx-auto mt-8">{postdetails.desc}</p>
+                        <img src={postdetails.photo} alt="" className=" w-full mx-auto mt-8"/>
+                        <div className="mx-auto mt-8" dangerouslySetInnerHTML={{ __html: postdetails.desc }} />
                         <div className="flex items-center mt-8 space-x-4 font-semibold">
                             <p>Categories:</p>
                             <div className="flex justify-center items-center space-x-2">
