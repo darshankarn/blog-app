@@ -6,15 +6,15 @@ import uploadOnCloud from "../utills/cloudinary.js";
 import {Comment} from "../model/Comment.js"
 
 // create
-const createPost = asyncHandler(async(req,res)=>{
+const createPost = asyncHandler(async (req, res) => {
     try {
-        const newPost = new Post(req.body)
+        const newPost = new Post(req.body);
         const savedPost = await newPost.save();
-        return res.status(200).json(new ApiResponse(201,savedPost,"post created suceessfully"))
+        return res.status(200).json(new ApiResponse(201, savedPost, "Post created successfully"));
     } catch (error) {
-        return res.status(500).json(err);
+        return res.status(500).json(error); 
     }
-})
+});
 
 // Update
 
