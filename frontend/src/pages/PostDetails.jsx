@@ -100,11 +100,11 @@ function PostDetails() {
                         </div>
                         <img src={postdetails.photo} alt="" className=" w-full mx-auto mt-8"/>
                         <div className="mx-auto mt-8" dangerouslySetInnerHTML={{ __html: postdetails.desc }} />
-                        <div className="flex items-center mt-8 space-x-4 font-semibold">
+                        <div className="flex items-center mt-8 space-x-4 space-y-1 font-semibold flex-wrap">
                             <p>Categories:</p>
-                            <div className="flex justify-center items-center space-x-2">
+                            <div className="flex justify-center items-center gap-2 flex-wrap">
                             {postdetails.categories.map((cat,i)=>(
-                                <div key={i} className="bg-gray-300 rounded-lg px-3 py-1">{cat}</div>
+                                <div key={i} className="bg-gray-300 rounded-lg px-3 py-1 text-xs md:text-sm">{cat}</div>
                             ))}
                             </div>
                         </div>
